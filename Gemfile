@@ -21,6 +21,9 @@ gem 'mechanize'
 gem 'faker'
 gem 'rails_12factor'
 
+# we use this gem to make sure that our bookmarklet js fies do not get hashed during precompiling
+gem "non-stupid-digest-assets"
+
 group :development, :test do
   gem "better_errors"
   gem "spring"
