@@ -1,15 +1,15 @@
 <div id="nav-wrapper" class="ng-scope">
     <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><ul id="nav" data-ng-controller="NavCtrl" data-collapse-nav="" data-slim-scroll="" data-highlight-active="" class="ng-scope" style="overflow: hidden; width: auto; height: 100%;">
-        <li><a href="#/dashboard"> <i class="fa fa-dashboard"><span class="icon-bg bg-danger"></span></i><span data-i18n="Dashboard">Dashboard</span> </a></li>
+        <li><%= link_to easymarklet_js('bookmarklet.js'), :class=>"bookmarklet" do %> <i class="fa fa-bookmark"><span class="icon-bg bg-danger"></span></i><span data-i18n="Abodely Bookmarklet" title="Drag me to your bookmark bar and click when on Craigslist">Add2Abodely </span><%end%> </li>
         <li>
-            <a href="#/hunts"><i class="fa fa-file-text-o"><span class="icon-bg bg-violet"></span></i><span data-i18n="Hunts">Hunts</span></a>
+            <a href="#/hunts"><i class="fa fa-bullseye"><span class="icon-bg bg-violet"></span></i><span data-i18n="Hunts">Hunts</span></a>
             <ul>
-                <li><%= link_to hunts_path do %><i class="fa fa-caret-right"></i><span data-i18n="Add New Hunt" class="newhunt">Add New Hunt</span></a><%end%></li>
-                <li><%= link_to hunts_path do%><i class="fa fa-caret-right"></i><span data-i18n="Hunt History">Hunt History</span></a><%end%></li>
+                <li><%= link_to hunts_path do %><i class="fa fa-caret-right"></i><span data-i18n="Add New Hunt" class="newhunt">Add New Hunt</span><%end%></li>
+                <li><%= link_to hunts_path do%><i class="fa fa-caret-right"></i><span data-i18n="Hunt History">Hunt History</span><%end%></li>
               </ul>
         <i class="fa fa-caret-right icon-has-ul"></i></li>
         <li>
-            <a href="#/Apartments"><i class="fa fa-file-text-o"><span class="icon-bg bg-warning"></span></i><span data-i18n="Apartments">Apartments</span></a>
+            <a href="#/Apartments"><i class="fa fa-map-marker"><span class="icon-bg bg-warning"></span></i><span data-i18n="Apartments">Apartments</span></a>
             <ul>
                 <% if @hunt %>
                     <% if @hunt.id %>

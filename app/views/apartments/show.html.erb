@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <script src="https://maps.googleapis.com/maps/api/js"></script>
-</head>
-<body>
-
-  <!---------- BASIC APARTMENT INFORMATION ---------->
+<!---------- BASIC APARTMENT INFORMATION ---------->
   <div class="page page-tasks ng-scope">
     <ol class="breadcrumb">
       <li><%= link_to "My Hunts", hunts_path %></a></li>
@@ -13,8 +6,8 @@
       <li class="active"><a href=""><%= @apartment.street %></a></li>
     </ol>
     <div class="row">
-      <div class="col-md-5">
-        <div class="panel panel-default">
+      <div class="col-md-4">
+        <div class="panel panel-primary">
           <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> <span id="address"><%= @apartment.street %> <%= @apartment.unit %> <%= @apartment.city %> <%= @apartment.state %> <%= @apartment.zip %></span></strong></div>
           <div class="panel-body">
             <div class="media">
@@ -48,6 +41,7 @@
                 </ul>
               </div>
             </div>
+             <!---------- MAP ---------->
             <section class="panel panel-default">
             <div class="panel-body">
               <div id="map_canvas"></div>
@@ -56,14 +50,8 @@
           </div>
         </div>
       </div>
-  <!---------- MAP ---------->
-
-
-
-
-
       <!---------- IMAGE GALLERY ---------->
-      <div class="col-md-7">
+      <div class="col-md-8">
         <div class="panel panel-default">
           <div class="panel-heading">
             <strong><span class="glyphicon glyphicon-th"></span>
@@ -91,18 +79,9 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="divider"></div>
-
-
-      <!---------- DETAILS ---------->
-      <div class="row">
-        <div class="col-md-12">
+                <!---------- DETAILS ---------->
           <section class="task-container ng-scope" data-ng-controller="taskCtrl">
             <%= render 'details/form2' %>
-          </div>
-        </div>
         <div class="divider"></div>
         <section class="panel panel-default">
           <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Apartment Notes</strong></div>
@@ -120,11 +99,11 @@
         </section>
       </section>
     </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+
+
+   
   <div class="divider"></div>
 
-
-      <!-- Google Map -->
-
-
-        </body>
-        </html>
