@@ -1,74 +1,72 @@
-<ol class="breadcrumb">
-  <li><%= link_to "My Hunts", hunts_path %></a></li>
-  <li class="active"><%= @hunt.title %></li>
-</ol>
+  <ol class="breadcrumb">
+    <li><%= link_to "My Hunts", hunts_path %></a></li>
+    <li class="active"><%= @hunt.title %></li>
+  </ol>
 
-Drag link to bookmarks bar: <%= link_to 'Add2Abodely', easymarklet_js('bookmarklet.js') %>
-
-<section class="panel panel-default">
-  <div class="panel-heading">
-    <strong>
-      <span class="glyphicon glyphicon-th"></span>
-      <span data-i18n="Add New Apartment"></span>
-      <a href="#" class="addnewapt" ng-click="isCollapsed = !isCollapsed">
-        <i class="fa fa-plus"></i> </a></span></strong>
-      </div>
-      <div class="panel-body">
-        <div collapse="!isCollapsed" class= "newaptcollapse" >
-          <%= render 'apartments/form' %>
+  <section class="panel panel-danger">
+    <div class="panel-heading">
+      <strong>
+        <span class="glyphicon glyphicon-th"></span>
+        <span data-i18n="Add New Apartment"></span>
+        <a href="#" class="addnewapt" ng-click="isCollapsed = !isCollapsed">
+          <i class="fa fa-plus"></i> </a></span></strong>
         </div>
-      </div>
-    </section>
-    <section class="panel panel-default">
-      <div class="panel-heading">
-        <strong>
-          <span class="glyphicon glyphicon-th"></span> <%= @hunt.title %></span>
-          <div ng-controller="ModalDemoCtrl" class="addnewcollab">
-            <% @hunt.users.uniq.each do |user| %>
-            <%= user.name + "  |  " %>
-            <%end%>
-            <script type="text/ng-template" id="inviteForm.html.erb">
-            <%= render 'users/invitations/form' %>
-            </script>
-            <a href="#" ng-click="open()">
-              New Collaborator <i class="fa fa-plus"></i>
-            </a>
+        <div class="panel-body">
+          <div collapse="!isCollapsed" class= "newaptcollapse" >
+            <%= render 'apartments/form' %>
           </div>
-        </strong>
-      </div>
-      <div class="panel-body">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>View</th>
-              <th>Street</th>
-              <th>Unit</th>
-              <th>Contact</th>
-              <th>Link</th>
-              <th>Price</th>
-              <th>Status</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody class="apartments">
-            <% @hunt.apartments.each do |apt| %>
-            <tr data-id=<%= apt.id %>>
-              <td><%= link_to apartment_path(apt) do %>
-                <i class="fa fa-home fa-2x"></i>
-                <% end %></td>
-                <td><%= apt.street %></td>
-                <td><%= apt.unit %></td>
-                <td><%= apt.contact %></td>
-                <td><%= apt.link %></td>
-                <td><%= apt.price %></td>
-                <td><span class="ui-select"><%= select :apartment, :status, [" ", "Applied for", "Viewed", "No longer interested", "Contacted agent/landlord", "Application denied"], {selected: apt.status}, {class: "status", id: apt.id} %>
-                </td></span>
-                <td><%= link_to 'Delete', apt, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
-                </td>
-              </tr>
-              <% end %>
-            </tbody>
-          </table>
         </div>
       </section>
+      <section class="panel panel-default">
+        <div class="panel-heading">
+          <strong>
+            <span class="glyphicon glyphicon-th"></span> <%= @hunt.title %></span>
+            <div ng-controller="ModalDemoCtrl" class="addnewcollab">
+              <% @hunt.users.uniq.each do |user| %>
+              <%= user.name + "  |  " %>
+              <%end%>
+              <script type="text/ng-template" id="inviteForm.html.erb">
+              <%= render 'users/invitations/form' %>
+              </script>
+              <a href="#" ng-click="open()">
+                New Collaborator <i class="fa fa-plus"></i>
+              </a>
+            </div>
+          </strong>
+        </div>
+        <div class="panel-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>View</th>
+                <th>Street</th>
+                <th>Unit</th>
+                <th>Contact</th>
+                <th>Link</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody class="apartments">
+              <% @hunt.apartments.each do |apt| %>
+              <tr data-id=<%= apt.id %>>
+                <td><%= link_to apartment_path(apt) do %>
+                  <i class="fa fa-home fa-2x"></i>
+                  <% end %></td>
+                  <td><%= apt.street %></td>
+                  <td><%= apt.unit %></td>
+                  <td><%= apt.contact %></td>
+                  <td><%= apt.link %></td>
+                  <td><%= apt.price %></td>
+                  <td><span class="ui-select"><%= select :apartment, :status, [" ", "Applied for", "Viewed", "No longer interested", "Contacted agent/landlord", "Application denied"], {selected: apt.status}, {class: "status", id: apt.id} %>
+                  </td></span>
+                  <td><%= link_to 'Delete', apt, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </section>
 

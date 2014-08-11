@@ -28,11 +28,27 @@ $color_5: #1fbed6;
 $color_6: #000;
 $color_7: #fff;
 
+//font
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker|Pacifico);
+
+.logo { 
+  font-family: 'Pacifico', cursive;
+}
+
+.page-signin .logo, .page-signup .logo {
+  font-size: 65px;
+  font-weight: bold;
+  margin-left: -16px;
+}
+
 .addnewapt {
   float: right;
   &:hover {
     text-decoration: none;
   }
+}
+.img30_30 {
+  margin-right: 4px;
 }
 div {
   &.addnewcollab {

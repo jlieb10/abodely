@@ -15,7 +15,6 @@ before_action :check_referer, only: [:index]
   def check_referer
     url = request.referer
     if !url.match("craigslist.org")
-      binding.pry
       redirect_to url
     else
       cl_indicators = ["all housing", "postingbody"]

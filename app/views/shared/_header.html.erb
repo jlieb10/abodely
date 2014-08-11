@@ -4,7 +4,7 @@
      <!-- Logo -->
      <div class="logo">
         <%= link_to "#" do %>
-        <i class="fa fa-home"></i>Abodely
+        <i class="fa fa-home"></i> Abodely
         <% end %>
      </div>
 
@@ -17,22 +17,9 @@
 
      <div class="top-nav">
          <ul class="nav-right pull-right list-unstyled">
-           <!--   <li class="dropdown langs text-normal ng-scope" data-ng-controller="LangCtrl">
-                 <a href="javascript:;" class="dropdown-toggle ng-binding" data-toggle="dropdown">
-                     English
-                 </a> -->
- <!--             <li class="dropdown">
-                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-                     <span class="fa fa-magic nav-icon"></span>
-                 </a>
-                 <ul class="dropdown-menu pull-right color-switch" data-ui-color-switch>
-                     <li><a href="javascript:;" class="color-option color-some_color" data-style="some_color"></a></li>
-                 </ul>
-             </li> -->
              <li class="dropdown text-normal nav-profile">
                  <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-
-                     <img src="<%= current_user.profpic_url(:thumb2) %>" alt="" class="img-circle img30_30">
+                     <img src="<%= current_user.profpic.thumb2 %>" alt="" class="img-circle img30_30">
                      <span class="hidden-xs">
                          <span data-i18n="<%= current_user.name %>"><%= current_user.name %></span>
                      </span>
