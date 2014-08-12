@@ -20,21 +20,14 @@ gem 'nokogiri'
 gem 'mechanize'
 gem 'faker'
 gem 'rails_12factor'
-<<<<<<< HEAD
-gem "pry"
-gem 'pry-nav'
-=======
 
-# we use this gem to make sure that our bookmarklet js fies do not get hashed during precompiling
-gem "non-stupid-digest-assets"
-
->>>>>>> ae5fda644971f44cbfb3b5b5ed1539fd4856fdaf
 group :development, :test do
   gem "better_errors"
   gem "spring"
   gem "capybara"
   gem "cucumber"
   gem "rspec"
+  gem "pry"
   gem "binding_of_caller"
   gem "letter_opener"
   gem "email_spec"
