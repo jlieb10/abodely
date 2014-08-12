@@ -1,8 +1,30 @@
-<h1>Editing hunt</h1>
+<div class="page ng-scope">
+  <ol class="breadcrumb">
+    <li><%= link_to "My Hunts", hunts_path %></a></li>
+    <li><%= link_to @hunt.title, @hunt %></li>
+    <li class="active">Edit Hunt</li>
+  </ol>
+    <div class="row">
+      <div class="col-md-7">
+    <section class="panel panel-default ">
+      <div class="panel-heading">
+        <strong>
+          <span class="glyphicon glyphicon-th"></span><span data-i18n=" Editing hunt"></span></strong>
+      </div>
+      <div class="panel-body">
+      <%= render 'form2' %>
+      </div>
+      </section>
+    </div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @hunt %> |
-<%= link_to 'Back', hunts_path %>
-
-<%= render 'users/invitations/form' %>
+<div class="col-md-5">
+<section class="panel panel-primary ">
+      <div class="panel-heading">
+        <strong>
+          <span class="glyphicon glyphicon-th"></span><span data-i18n=" Invite Hunt Collaborators"></span></strong>
+      </div>
+      <div class="panel-body">
+      <%= render 'users/invitations/form2' %>
+</div>
+</div>
+</div>
