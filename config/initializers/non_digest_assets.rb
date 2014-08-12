@@ -1,1 +1,1 @@
-NonStupidDigestAssets.whitelist = ["bookmarklet.js.erb", "bookmarkletDev.js.erb"]
+# NonStupidDigestAssets.whitelist = ["bookmarklet.js.erb", "bookmarkletDev.js.erb"]
