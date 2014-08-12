@@ -20,14 +20,14 @@ gem 'nokogiri'
 gem 'mechanize'
 gem 'faker'
 gem 'rails_12factor'
-
+gem "pry"
+gem 'pry-nav'
 group :development, :test do
   gem "better_errors"
   gem "spring"
   gem "capybara"
   gem "cucumber"
   gem "rspec"
-  gem "pry"
   gem "binding_of_caller"
   gem "letter_opener"
   gem "email_spec"
