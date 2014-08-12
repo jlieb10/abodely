@@ -4,7 +4,7 @@ module ApplicationHelper
 		if Rails.env.development?
     	easymarklet_js("..#{javascript_path 'bookmarkletDev'}")
     else
-    	easymarklet_js("javascript_path 'bookmarklet")
+    	easymarklet_js(javascript_path 'bookmarklet')
     end
 	end
 end
