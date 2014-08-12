@@ -161,6 +161,7 @@ GEM
     net-http-persistent (2.9.4)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
+    non-stupid-digest-assets (1.0.4)
     ntlm-http (0.1.1)
     orm_adapter (0.5.0)
     paperclip (4.2.0)
@@ -292,6 +293,7 @@ DEPENDENCIES
   mechanize
   mini_magick
   nokogiri
+  non-stupid-digest-assets
   paperclip
   pg
   pry

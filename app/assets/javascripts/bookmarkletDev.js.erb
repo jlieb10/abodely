@@ -1,8 +1,9 @@
 //= require easymarklet/simple
 
 (function(){
+  // add asset tag here. does it work inside js object? will need to add erb to use tag.
   var FvbSimpleBookmarklet = {
-    css : "<%= asset_path "application.css" %>", // could be an array or a single string
+    css : "<%= asset_path "application", type: :stylesheet %>", // could be an array or a single string
     init : function(full_host){
       full_host = full_host == undefined ? '' : full_host
       var div = document.createElement('div')
@@ -32,5 +33,4 @@
 })();
 
 var fvb_simple_simple = new Easymarklet.Simple(FvbSimpleBookmarklet);
-fvb_simple_simple.init();
-
+fvb_simple_simple.init('http://0.0.0.0:3000');

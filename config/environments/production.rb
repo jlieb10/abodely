@@ -5,7 +5,8 @@ Rails.application.configure do
   config.cache_classes = true
 
   # Need to define default_url_options for bookmarklet
-  config.action_controller.default_url_options = { host: 'http://boiling-harbor-6695.herokuapp.com' }
+
+  config.action_controller.default_url_options = { host: 'boiling-harbor-6695.herokuapp.com'}
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
