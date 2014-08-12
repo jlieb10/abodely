@@ -26,7 +26,7 @@
 
                     <div class="form-group">
                       <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-sm-6">
                          <%= f.label :password %> <i>(*not required)</i><br />
                          <%= f.password_field :password, :class=> "form-control ng-pristine ng-invalid ng-invalid-required", autocomplete: "off" %>
                         </div>
@@ -50,12 +50,12 @@
                  </fieldset>
                  <% end %>
                </div>
-               <div class="col-md-3">
+               <div class="col-sm-3 profile">
                   <%= image_tag @user.profpic.thumb1 if @user.profpic %>
                </div>
-             </div>
-               </div>
-             </div>
+             </div> <!-- row -->
+               </div> <!-- panel-body -->
+             </div> <!-- panel-default -->
              <div class="panel panel-default">
                <div class="panel-heading">
                  <strong><span class="glyphicon glyphicon-th"></span> Cancel account</strong>
@@ -64,7 +64,8 @@
                   <strong><p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, :class=> "btn btn-w-md btn-gap-v btn-warning", method: :delete %></p></strong>
                 </div>
 <!--             <%= link_to "Back", :back %>
- -->
-        </div>
-    </div>
-  </div>
+ -->        </div>
+        </div>  <!-- col-10 -->
+            <div class="col-md-1"></div>
+    </div> <!-- row -->
+  </div> <!--page page-form ng-scope -->

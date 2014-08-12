@@ -24,6 +24,7 @@ class HuntsController < ApplicationController
 
   # GET /hunts/1/edit
   def edit
+    @invited_user = User.new
   end
 
   # POST /hunts

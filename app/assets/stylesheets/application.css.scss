@@ -35,6 +35,18 @@ $color_7: #fff;
   font-family: 'Pacifico', cursive;
 }
 
+.profile img {
+  width: 100%;
+}
+
+.danger {
+  color: #e94b3b;  
+}
+
+.success{
+  color: #23ae89;
+}
+
 .page-signin .logo, .page-signup .logo {
   font-size: 65px;
   font-weight: bold;
