@@ -3,7 +3,7 @@
     <li class="active"><%= @hunt.title %></li>
   </ol>
 
-  <section class="panel panel-danger">
+  <section class="panel panel-default">
     <div class="panel-heading">
       <strong>
         <span class="glyphicon glyphicon-th"></span>
@@ -35,7 +35,8 @@
           </strong>
         </div>
         <div class="panel-body">
-          <table class="table table-hover">
+          <section class="table-flip-scroll">
+          <table class="table table-bordered table-striped cf">
             <thead>
               <tr>
                 <th>View</th>
@@ -45,7 +46,9 @@
                 <th>Link</th>
                 <th>Price</th>
                 <th>Status</th>
-                <th></th>
+                <th>Pros</th>
+                <th>Cons</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody class="apartments">
@@ -59,16 +62,18 @@
                   <td><%= apt.contact %></td>
                   <td><%= apt.link %></td>
                   <td><%= apt.price %></td>
-                  <td><span class="ui-select"><%= select :apartment, :status, [" ", "Applied for", "Viewed", "No longer interested", "Contacted agent/landlord", "Application denied"], {selected: apt.status}, {class: "status", id: apt.id} %>
-                  </td></span>
+                  <td><%= select :apartment, :status, [" ", "Applied for", "Viewed", "No longer interested", "Contacted agent/landlord", "Application denied"], {selected: apt.status}, {class: "status", id: apt.id} %>
+             </td>
+                  <td><span class="success"><%= apt.details.where(procon: "pro").count %> <i class="fa fa-thumbs-up"></span></td>
+                  <td><span class="danger"><%= apt.details.where(procon: "con").count %> <i class="fa fa-thumbs-down danger"></span></td>
                   <td><%= link_to(apt, method: :delete, data: { confirm: 'Are you sure?' }) do %>
                     <span class="glyphicon glyphicon-remove"></span>
                     <% end %>
-                  </td>
                 </tr>
                 <% end %>
               </tbody>
             </table>
+          </section>
           </div>
         </section>
 
