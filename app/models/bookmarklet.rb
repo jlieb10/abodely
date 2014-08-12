@@ -16,6 +16,7 @@ class Bookmarklet
 		scrape_rent
 		scrape_neighborhood
 		scrape_contact
+		check_for_hunt
 		create_apartment
 		add_details
 	end
@@ -45,16 +46,25 @@ class Bookmarklet
 		end
 	end
 
+	def check_for_hunt
+		if !!@user.hunts.last
+			@hunt = @user.hunts.last
+		else 
+			@hunt = Hunt.create(title: "New Hunt")
+			@user.hunts << @hunt
+		end
+	end
+
 	def create_apartment
-		hunt = @user.hunts.last
 		@apartment = Apartment.new(:link => @url, :price => @rent, :street => @neighborhood, :contact => @number)
 		@apartment.save
-		hunt.apartments << @apartment
+		@hunt.apartments << @apartment
 	end
 
 	def add_details
 		@images.each do |image_url|
 			det = Detail.new(:remote_image_url => image_url, :apartment_id => @apartment.id)
+			det.content = ""
 			det.save
 		end
 	end
