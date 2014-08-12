@@ -21,7 +21,7 @@ gem 'mechanize'
 gem 'faker'
 gem 'rails_12factor'
 gem 'pry'
-
+gem 'pry-nav'
 group :development, :test do
   gem "better_errors"
   gem "spring"
