@@ -31,7 +31,7 @@ $color_7: #fff;
 //font
 @import url(http://fonts.googleapis.com/css?family=Permanent+Marker|Pacifico);
 
-.logo { 
+.logo {
   font-family: 'Pacifico', cursive;
 }
 
@@ -40,7 +40,7 @@ $color_7: #fff;
 }
 
 .danger {
-  color: #e94b3b;  
+  color: #e94b3b;
 }
 
 .success{
@@ -149,4 +149,8 @@ div {
     width: auto;
     padding-left: 15px;
   }
+}
+
+section#loginpage {
+  background-color: black;
 }
