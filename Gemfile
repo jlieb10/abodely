@@ -20,6 +20,7 @@ gem 'nokogiri'
 gem 'mechanize'
 gem 'faker'
 gem 'rails_12factor'
+gem 'pry'
 
 group :development, :test do
   gem "better_errors"
