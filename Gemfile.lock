@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/bernat/best_in_place.git
+  revision: c68b5d17b767b1b07b4459828cc3a0cc4bce33c7
+  specs:
+    best_in_place (3.0.0.alpha)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -269,6 +277,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  best_in_place!
   better_errors
   binding_of_caller
   capybara
