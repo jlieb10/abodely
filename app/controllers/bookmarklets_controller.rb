@@ -8,7 +8,7 @@ before_action :check_referer, only: [:index]
     user = current_user
     @bookmarklet = Bookmarklet.new(@url, user)
     @bookmarklet.run
-    redirect_to user.latest_hunt
+    redirect_to user.latest_hunt 
   end
 
   private
