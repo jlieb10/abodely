@@ -30,7 +30,7 @@ $color_7: #fff;
 $color_8: #176698;
 
 //font
-@import url("http://fonts.googleapis.com/css?family=Pacifico”);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
 
 .unique {
   background: url(brick_texture3329.jpg) no-repeat center center fixed; 
@@ -127,11 +127,6 @@ div {
 .modal-content {
   z-index: 3000;
 }
-
-.bx-next {
-  margin-right: 10px;
-}
-
 .bx-viewport {
   min-width: 50%;
   max-width: 100%;
@@ -163,12 +158,10 @@ div {
   position: fixed;
   top: 10px;
   left: 10px;
-  background: #FFB61C;
+  background: #1FBED6;
   border: 3px single $color_6;
   color: $color_7;
   padding: 10px;
-  font-weight: bold;
-  font-family: "Lato", Helvetica, Arial, sans-serif;
   //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
   border-radius: 8px;
   z-index: 10000;
