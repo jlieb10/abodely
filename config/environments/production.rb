@@ -5,7 +5,8 @@ Rails.application.configure do
   config.cache_classes = true
 
   # Need to define default_url_options for bookmarklet
-  # config.action_controller.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_controller.default_url_options = { host: 'boiling-harbor-6695.herokuapp.com'}
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -31,6 +32,7 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
+  
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -62,7 +64,7 @@ Rails.application.configure do
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-  # config.assets.precompile += %w( search.js )
+  config.assets.precompile += %w( bookmarklet.js )
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

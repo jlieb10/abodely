@@ -25,7 +25,7 @@
             <th>Hunt Name</th>
             <th>Collaborators</th>
             <th>Start Date</th>
-            <th></th>
+            
             <th></th>
           </tr>
         </thead>
@@ -38,8 +38,8 @@
               <%end%>
               </td>
               <td><%=hunt.created_at.strftime("%m/%d/%Y")%></td>
-              <td><%= link_to 'Edit', edit_hunt_path(hunt) %></td>
-              <td><%= link_to 'Delete', hunt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to hunt, method: :delete, data: { confirm: 'Are you sure?' } do %><span class="glyphicon glyphicon-remove pull-right"></span><%end%><%= link_to edit_hunt_path(hunt) do%>     <span class="glyphicon glyphicon-pencil pull-right">    </span><%end%>            
+             </td>
             </tr>
           <% end %>
         </tbody>

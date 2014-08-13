@@ -11,15 +11,29 @@
 // about supported directives.
 //
 //= require jquery
+
 //= require jquery_ujs
 //= require vendor
 //= require app
 //= require ui
 //= require jquery.bxslider
-//= require_tree .
+//= require best_in_place
 //= require_self
 
 $(document).ready(function(){
+
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+
+/* Add the edit icon when hovering over an editable field in the apartment show page*/
+  $("span.best_in_place")
+    .mouseover(function(){
+    $(this).next("span.editicon").removeClass("hidden");
+  })
+    .mouseout(function(){
+      $(this).next("span.editicon").addClass("hidden");
+    })
+
   $('input.con, input.pro').change(function(){
     var form = $(this.form);
 

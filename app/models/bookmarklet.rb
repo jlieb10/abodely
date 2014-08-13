@@ -16,6 +16,7 @@ class Bookmarklet
 		scrape_rent
 		scrape_neighborhood
 		scrape_contact
+		check_for_hunt
 		create_apartment
 		add_details
 	end
@@ -31,7 +32,13 @@ class Bookmarklet
 	end
 
 	def scrape_neighborhood
-		@neighborhood = @doc.at_css('.postingtitle').text.match(/\(.+/)[0].gsub(/\(|\)/, "")
+		title_text = @doc.at_css('.postingtitle').text
+		if title_text.include?("(")
+			hood = title_text.match(/\(.+/)[0]
+			@neighborhood = hood.gsub(/\(|\)/, "")
+		else
+			@neighborhood = "See Craiglist posting."
+		end
 	end
 
 	def scrape_contact
@@ -41,20 +48,29 @@ class Bookmarklet
 		if new_page != nil
 		  @number = new_page.click.body.match(/\d.?\d.?\d.?.?.?\d.?\d.?\d.?.?.?\d.?\d.?\d.?\d/)[0]
 		else
-		  @number = "See Craiglist page for contact info."
+		  @number = "See Craiglist posting."
+		end
+	end
+
+	def check_for_hunt
+		if !!@user.hunts.last
+			@hunt = @user.hunts.last
+		else 
+			@hunt = Hunt.create(title: "New Hunt")
+			@user.hunts << @hunt
 		end
 	end
 
 	def create_apartment
-		hunt = @user.hunts.last
 		@apartment = Apartment.new(:link => @url, :price => @rent, :street => @neighborhood, :contact => @number)
 		@apartment.save
-		hunt.apartments << @apartment
+		@hunt.apartments << @apartment
 	end
 
 	def add_details
 		@images.each do |image_url|
 			det = Detail.new(:remote_image_url => image_url, :apartment_id => @apartment.id)
+			det.content = ""
 			det.save
 		end
 	end

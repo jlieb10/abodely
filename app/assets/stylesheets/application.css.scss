@@ -27,6 +27,7 @@ $color_4: #fdefee;
 $color_5: #1fbed6;
 $color_6: #000;
 $color_7: #fff;
+$color_8: #176698;
 
 //font
 @import url(http://fonts.googleapis.com/css?family=Permanent+Marker|Pacifico);
@@ -37,6 +38,10 @@ $color_7: #fff;
 
 .profile img {
   width: 100%;
+}
+
+.tooltip.bottom {
+  font-weight: bold;
 }
 
 .danger {
@@ -51,6 +56,18 @@ $color_7: #fff;
   font-size: 65px;
   font-weight: bold;
   margin-left: -16px;
+}
+
+.best_in_place:hover{
+  cursor: pointer;
+}
+
+.hidden{
+  visibility:hidden;
+}
+
+.glyphicon-pencil.pull-right{
+  padding-right: 10px;
 }
 
 .addnewapt {
@@ -75,6 +92,11 @@ div {
 .modal-content {
   z-index: 3000;
 }
+
+.bx-next {
+  margin-right: 10px;
+}
+
 .bx-viewport {
   min-width: 50%;
   max-width: 100%;
@@ -106,10 +128,12 @@ div {
   position: fixed;
   top: 10px;
   left: 10px;
-  background: #1FBED6;
+  background: #FFB61C;
   border: 3px single $color_6;
   color: $color_7;
   padding: 10px;
+  font-weight: bold;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
   //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
   border-radius: 8px;
   z-index: 10000;

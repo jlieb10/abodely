@@ -48,8 +48,8 @@ class ApartmentsController < ApplicationController
   def update
     respond_to do |format|
       if @apartment.update(apartment_params)
-        format.html { redirect_to @apartment, notice: 'Apartment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @apartment }
+          format.html { redirect_to @apartment, notice: 'Apartment was successfully updated.' }
+        format.json { respond_with_bip(@apartment) }
       else
         format.html { render :edit }
         format.json { render json: @apartment.errors, status: :unprocessable_entity }

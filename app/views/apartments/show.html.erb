@@ -8,7 +8,7 @@
     <div class="row">
       <div class="col-md-4">
         <div class="panel panel-primary">
-          <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> <span id="address"><%= @apartment.street %> <%= @apartment.unit %> <%= @apartment.city %> <%= @apartment.state %> <%= @apartment.zip %></span></strong></div>
+          <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> <span id="address"><%= best_in_place @apartment, :street, :type => :input %><span class="glyphicon glyphicon-pencil editicon hidden"></span> <%= best_in_place @apartment, :unit, :type => :input %> <%= best_in_place @apartment, :city, :type => :input %><span class="glyphicon glyphicon-pencil editicon hidden"></span> <%=best_in_place  @apartment, :state, :type => :input %> <span class="glyphicon glyphicon-pencil editicon hidden"></span><%=best_in_place  @apartment, :zip, :type => :input %><span class="glyphicon glyphicon-pencil editicon hidden"></span></span><span class="glyphicon glyphicon-pencil editicon hidden"></span></strong></div>
           <div class="panel-body">
             <div class="media">
               <div class="media-body">
@@ -16,22 +16,22 @@
                   <li class="ng-binding">
                     <span class="icon glyphicon glyphicon-paperclip"></span>
                     <label>Link:</label>
-                    <%= @apartment.link %>
+                    <%= best_in_place @apartment, :link, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
                   </li>
                   <li>
                     <span class="icon glyphicon glyphicon-user"></span>
                     <label>Contact:</label>
-                    <%= @apartment.contact %>
+                    <%= best_in_place @apartment, :contact, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
                   </li>
                   <li>
                     <span class="icon glyphicon glyphicon-usd"></span>
                     <label>Price:</label>
-                    <%= @apartment.price %>
+                    <%= best_in_place @apartment, :price, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
                   </li>
                   <li>
                     <span class="icon glyphicon glyphicon-calendar"></span>
                     <label>Move In Date:</label>
-                    <%= @apartment.move_in_date %>
+                    <%= best_in_place @apartment, :move_in_date, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
                   </li>
                 </ul>
               </div>
@@ -64,11 +64,15 @@
               <div class="media">
                 <div class="media-body">
                   <ul class="bxslider">
+                    <% @image_count = 0 %>
                     <% @apartment.details.each do |detail| %>
-                    <% if detail.image_url %>
-                    <li><%= image_tag detail.image_url(:gallery) %></li>
+                      <% if detail.image_url %>
+                        <% @image_count += 1 %>
+                        <li><%= image_tag detail.image_url(:gallery) %></li>
+                      <% end %>
+                      <% @image_count %>
                     <% end %>
-                    <% end %>
+                    <%= temporary_image(@image_count) %>
                   </ul>
                 </div>
               </div>

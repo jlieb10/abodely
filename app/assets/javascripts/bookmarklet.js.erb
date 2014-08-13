@@ -1,7 +1,6 @@
 //= require easymarklet/simple
 
 (function(){
-  // add asset tag here. does it work inside js object? will need to add erb to use tag.
   var FvbSimpleBookmarklet = {
     css : "<%= asset_path "application.css" %>", // could be an array or a single string
     init : function(full_host){
@@ -10,14 +9,14 @@
       div.id = 'fvb_simple_insert'
 
       var go = document.createElement('a')
-      go.appendChild(document.createTextNode('Add this listing to Abodely.'))
+      go.appendChild(document.createTextNode('Add this listing to Abodely'))
       go.onclick = function(){
         var dest = full_host + "/bookmarklets?url=" + encodeURIComponent(document.location)
         document.location = dest;
       }
 
       var no = document.createElement('a')
-      no.appendChild(document.createTextNode(' Nevermind.'))
+      no.appendChild(document.createTextNode(' | Nevermind'))
       no.onclick = function(){
         document.body.removeChild(div);
       }
@@ -33,4 +32,5 @@
 })();
 
 var fvb_simple_simple = new Easymarklet.Simple(FvbSimpleBookmarklet);
-fvb_simple_simple.init('http://0.0.0.0:3000');
+fvb_simple_simple.init();
+
