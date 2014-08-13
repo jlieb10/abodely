@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/stephaniecoleman/easymarklet
+  revision: cb346c33e2f41eec353a30ba50ea07b8631392e3
+  specs:
+    easymarklet (0.0.12)
+      easyxdm-rails (~> 0.0.5)
+      rails (>= 3.2.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -80,9 +88,6 @@ GEM
     diff-lcs (1.2.5)
     domain_name (0.5.19)
       unf (>= 0.0.5, < 1.0.0)
-    easymarklet (0.0.12)
-      easyxdm-rails (~> 0.0.5)
-      rails (>= 3.2.9)
     easyxdm-rails (0.0.8)
       rails (>= 3.2.8)
     em-websocket (0.5.1)
@@ -279,7 +284,7 @@ DEPENDENCIES
   cucumber
   devise
   devise_invitable
-  easymarklet
+  easymarklet!
   email_spec
   factory_girl
   faker

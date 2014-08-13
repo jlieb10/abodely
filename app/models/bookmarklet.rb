@@ -32,7 +32,13 @@ class Bookmarklet
 	end
 
 	def scrape_neighborhood
-		@neighborhood = @doc.at_css('.postingtitle').text.match(/\(.+/)[0].gsub(/\(|\)/, "")
+		title_text = @doc.at_css('.postingtitle').text
+		if title_text.include?("(")
+			hood = title_text.match(/\(.+/)[0]
+			@neighborhood = hood.gsub(/\(|\)/, "")
+		else
+			@neighborhood = "See Craiglist posting."
+		end
 	end
 
 	def scrape_contact
@@ -42,7 +48,7 @@ class Bookmarklet
 		if new_page != nil
 		  @number = new_page.click.body.match(/\d.?\d.?\d.?.?.?\d.?\d.?\d.?.?.?\d.?\d.?\d.?\d/)[0]
 		else
-		  @number = "See Craiglist page for contact info."
+		  @number = "See Craiglist posting."
 		end
 	end
 
