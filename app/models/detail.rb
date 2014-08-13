@@ -4,4 +4,8 @@ class Detail < ActiveRecord::Base
 
   validates_presence_of :content, unless: ->(detail){detail.image.present?}
   validates_presence_of :image, unless: ->(detail){detail.content.present?}
+
+  def procon_counter 
+      
+  end
 end

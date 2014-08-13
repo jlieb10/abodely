@@ -1,4 +1,4 @@
-<div class="page-signup">
+<div class="page-signup unique">
 
     <div class="signin-header">
         <div class="container text-center">
@@ -58,7 +58,6 @@
                         </div>
 
                         <div class="form-group">
-                            <p class="text-muted text-small">By clicking on Sign up, you agree to <a href="javascript:;">terms &amp; conditions</a> and <a href="javascript:;">privacy policy</a></p>
                             <div class="divider"></div>
                             <%= f.submit "Sign up", :class=> "btn btn-primary btn-block btn-lg"%>
                         </div>
@@ -69,7 +68,7 @@
  -->                </section>
 
                 <section>
-                    <p class="text-center text-muted">Already have an account?<%= render "devise/shared/links" %></p>
+                    <p class="text-center text-black">Already have an account?<span class="signuplink"><%= render "devise/shared/links" %></span></p>
                 </section>
 
             </div>
