@@ -17,11 +17,7 @@ ActiveRecord::Schema.define(version: 20140716212948) do
   enable_extension "plpgsql"
 
   create_table "apartments", force: true do |t|
-    t.string   "street"
-    t.string   "unit"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
+    t.string   "address"
     t.string   "link"
     t.string   "contact"
     t.integer  "price"

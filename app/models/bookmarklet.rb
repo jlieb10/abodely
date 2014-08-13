@@ -62,7 +62,7 @@ class Bookmarklet
 	end
 
 	def create_apartment
-		@apartment = Apartment.new(:link => @url, :price => @rent, :street => @neighborhood, :contact => @number)
+		@apartment = Apartment.new(:link => @url, :price => @rent, :address => @neighborhood, :contact => @number)
 		@apartment.save
 		@hunt.apartments << @apartment
 	end

@@ -3,16 +3,21 @@
     <ol class="breadcrumb">
       <li><%= link_to "My Hunts", hunts_path %></a></li>
       <li><%= link_to @apartment.hunt.title, hunt_path(@hunt.id) %></a></li>
-      <li class="active"><a href=""><%= @apartment.street %></a></li>
+      <li class="active"><a href=""><%= @apartment.address %></a></li>
     </ol>
     <div class="row">
       <div class="col-md-4">
         <div class="panel panel-primary">
-          <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> <span id="address"><%= best_in_place @apartment, :street, :type => :input %><span class="glyphicon glyphicon-pencil editicon hidden"></span> <%= best_in_place @apartment, :unit, :type => :input %> <%= best_in_place @apartment, :city, :type => :input %><span class="glyphicon glyphicon-pencil editicon hidden"></span> <%=best_in_place  @apartment, :state, :type => :input %> <span class="glyphicon glyphicon-pencil editicon hidden"></span><%=best_in_place  @apartment, :zip, :type => :input %><span class="glyphicon glyphicon-pencil editicon hidden"></span></span><span class="glyphicon glyphicon-pencil editicon hidden"></span></strong></div>
+          <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> <span id="address"><%= @apartment.address %><span class="glyphicon glyphicon-pencil editicon hidden"></span></strong></div>
           <div class="panel-body">
             <div class="media">
               <div class="media-body">
                 <ul class="list-unstyled list-info">
+                  <li class="ng-binding">
+                    <span class="icon glyphicon glyphicon-map-marker"></span>
+                    <label>Address:</label>
+                    <%= best_in_place @apartment, :address, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
+                  </li>
                   <li class="ng-binding">
                     <span class="icon glyphicon glyphicon-paperclip"></span>
                     <label>Link:</label>
