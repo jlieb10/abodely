@@ -1,1 +1,1 @@
-json.extract! @apartment, :id, :street, :unit, :city, :state, :zip, :link, :contact, :price, :hunt_id, :created_at, :updated_at
+json.extract! @apartment, :id, :address, :link, :contact, :price, :hunt_id, :created_at, :updated_at

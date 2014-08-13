@@ -2,14 +2,15 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.1'
 gem 'pg'
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'bcrypt', '~> 3.1.7'
-gem 'paperclip'
 gem 'carrierwave'
 gem 'devise'
 gem 'mini_magick'
@@ -21,6 +22,7 @@ gem 'mechanize'
 gem 'faker'
 gem 'rails_12factor'
 gem 'best_in_place', github: 'bernat/best_in_place'
+gem 'unicorn'
 
 group :development, :test do
   gem "better_errors"
@@ -37,8 +39,6 @@ group :development, :test do
   gem "guard"
   gem "guard-livereload"
 end
-
-gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
