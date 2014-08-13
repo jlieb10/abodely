@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/bernat/best_in_place.git
+  revision: c68b5d17b767b1b07b4459828cc3a0cc4bce33c7
+  specs:
+    best_in_place (3.0.0.alpha)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
+
+GIT
   remote: https://github.com/stephaniecoleman/easymarklet
   revision: 38e6f6e8febe11d4d5c8ecc48bfa64c875057265
   specs:
@@ -76,7 +84,7 @@ GEM
       multi_json (>= 1.7.5, < 2.0)
       multi_test (>= 0.1.1)
     debug_inspector (0.0.2)
-    devise (3.2.4)
+    devise (3.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -179,8 +187,6 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    pry-nav (0.2.4)
-      pry (>= 0.9.10, < 0.11.0)
     rack (1.5.2)
     rack-livereload (0.3.15)
       rack
@@ -276,6 +282,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  best_in_place!
   better_errors
   binding_of_caller
   capybara
@@ -300,7 +307,6 @@ DEPENDENCIES
   paperclip
   pg
   pry
-  pry-nav
   rack-livereload
   rails (= 4.1.1)
   rails_12factor

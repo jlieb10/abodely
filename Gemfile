@@ -20,8 +20,7 @@ gem 'nokogiri'
 gem 'mechanize'
 gem 'faker'
 gem 'rails_12factor'
-gem 'pry'
-gem 'pry-nav'
+gem 'best_in_place', github: 'bernat/best_in_place'
 
 group :development, :test do
   gem "better_errors"
