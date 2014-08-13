@@ -64,11 +64,15 @@
               <div class="media">
                 <div class="media-body">
                   <ul class="bxslider">
+                    <% @image_count = 0 %>
                     <% @apartment.details.each do |detail| %>
-                    <% if detail.image_url %>
-                    <li><%= image_tag detail.image_url(:gallery) %></li>
+                      <% if detail.image_url %>
+                        <% @image_count += 1 %>
+                        <li><%= image_tag detail.image_url(:gallery) %></li>
+                      <% end %>
+                      <% @image_count %>
                     <% end %>
-                    <% end %>
+                    <%= temporary_image(@image_count) %>
                   </ul>
                 </div>
               </div>

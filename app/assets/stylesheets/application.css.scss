@@ -110,10 +110,12 @@ div {
   position: fixed;
   top: 10px;
   left: 10px;
-  background: #1FBED6;
+  background: #FFB61C;
   border: 3px single $color_6;
   color: $color_7;
   padding: 10px;
+  font-weight: bold;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
   //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
   border-radius: 8px;
   z-index: 10000;

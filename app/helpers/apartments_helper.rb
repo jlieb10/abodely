@@ -22,4 +22,11 @@ module ApartmentsHelper
     end
     render 'apartments/detail', locals
   end
+
+  def temporary_image(count)
+    if count == 0
+      render 'apartments/nopics'
+    end
+  end
+
 end
