@@ -56,11 +56,7 @@ Hunt.create(
 15.times do
   Apartment.create(
     :hunt_id => 1,
-    :street => Faker::Address.street_address,
-    :unit => Faker::Address.secondary_address,
-    :city => "Brooklyn",
-    :state => "NY",
-    :zip => Faker::Address.zip,
+    :address => Faker::Address.street_address,
     :link => Faker::Internet.email,
     :contact => Faker::Internet.url,
     :price => 4000

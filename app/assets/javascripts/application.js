@@ -146,7 +146,7 @@ function codeAddresses(address){
     }
 
     else {
-      alert("Geocode was not successful for the following reason: " + status);
+      codeAddresses("New York, NY");
     }
 
     map.fitBounds(bounds);

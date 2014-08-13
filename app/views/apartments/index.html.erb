@@ -3,11 +3,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Street</th>
-      <th>Unit</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip Code</th>
+      <th>Address</th>
       <th>Link</th>
       <th>Contact</th>
       <th>Price</th>
@@ -19,11 +15,7 @@
   <tbody>
     <% @apartments.each do |apartment| %>
       <tr>
-        <td><%= apartment.street %></td>
-        <td><%= apartment.unit %></td>
-        <td><%= apartment.city %></td>
-        <td><%= apartment.state %></td>
-        <td><%= apartment.zip %></td>
+        <td><%= apartment.address %></td>
         <td><%= apartment.link %></td>
         <td><%= apartment.contact %></td>
         <td><%= apartment.price %></td>
