@@ -15,13 +15,14 @@ gem 'devise'
 gem 'mini_magick'
 gem 'devise_invitable'
 gem 'figaro'
-gem 'easymarklet'
+gem 'easymarklet', :git => 'https://github.com/stephaniecoleman/easymarklet'
 gem 'nokogiri'
 gem 'mechanize'
 gem 'faker'
 gem 'rails_12factor'
 gem 'pry'
 gem 'pry-nav'
+
 group :development, :test do
   gem "better_errors"
   gem "spring"
