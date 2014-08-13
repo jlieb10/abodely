@@ -10,14 +10,14 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-
-//= require jquery_ujs
 //= require vendor
-//= require app
 //= require ui
-//= require jquery.bxslider
 //= require best_in_place
+//= require jquery
+//= require bootstrap-sprockets
+//= require jquery_ujs
+//= require jquery.bxslider
+//= require app
 //= require_self
 
 $(document).ready(function(){
