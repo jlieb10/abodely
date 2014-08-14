@@ -114,6 +114,10 @@ div {
   margin-right: 10px;
 }
 
+.bx-next, .bx-prev {
+  z-index: 100;
+}
+
 .bx-viewport {
   min-width: 50%;
   max-width: 100%;
