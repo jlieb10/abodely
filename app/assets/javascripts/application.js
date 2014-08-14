@@ -12,11 +12,12 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require vendor
-//= require app
 //= require ui
 //= require jquery.bxslider
 //= require best_in_place
+//= require app
 //= require_self
 
 $(document).ready(function(){

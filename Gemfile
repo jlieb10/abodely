@@ -22,6 +22,7 @@ gem 'mechanize'
 gem 'faker'
 gem 'rails_12factor'
 gem 'best_in_place', github: 'bernat/best_in_place'
+gem 'unicorn'
 
 group :development, :test do
   gem "better_errors"
@@ -38,8 +39,6 @@ group :development, :test do
   gem "guard"
   gem "guard-livereload"
 end
-
-gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
