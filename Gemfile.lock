@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/stephaniecoleman/easymarklet
-  revision: 38e6f6e8febe11d4d5c8ecc48bfa64c875057265
+  revision: b25ce3644cc1874a5802ef825b6ac5691aeb8351
   specs:
     easymarklet (0.0.12)
       easyxdm-rails (~> 0.0.5)

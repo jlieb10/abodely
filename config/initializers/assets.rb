@@ -1,1 +1,0 @@
-Rails.application.config.assets.precompile += ['bookmarklet.js.erb', 'bookmarkletDev.js.erb']

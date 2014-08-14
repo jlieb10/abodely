@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-// colors
+//colors
 $color_0: #ddd;
 $color_1: #ddf7eb;
 $color_2: #f2fcf9;
@@ -11,7 +11,6 @@ $color_5: #1fbed6;
 $color_6: #000;
 $color_7: #fff;
 $color_8: #176698;
-
 //font
 
 .unique {
@@ -21,6 +20,13 @@ $color_8: #176698;
   width: 100%;
   height: 100%;
   z-index: 100;
+}
+
+.bg-warning.yellow {
+  background-color: #ffb61c;
+}
+.bg-danger.red {
+  background-color: #e94b3b;
 }
 
 .form-container {
@@ -33,22 +39,22 @@ p.text-center.text-muted.text-small {
   weight: bold;
 }
 
-.page-signin .signin-header, .page-signup .signin-header{
+.page-signin .signin-header, .page-signup .signin-header {
   background-color: transparent;
   padding: 52px 0 14px 0;
 }
 
-.page-signin .signin-body, .page-signin .signup-body, .page-signup .signin-body, .page-signup .signup-body{
+.page-signin .signin-body, .page-signin .signup-body, .page-signup .signin-body, .page-signup .signup-body {
   border-top:none;
 }
 
 .text-black {
   color: #333333;
-  }
+}
 
-  .signuplink a{
-    color: $color_8;
-  }
+.signuplink a {
+  color: $color_8;
+}
 
 .logo {
   font-family: 'Pacifico', cursive;
@@ -66,7 +72,7 @@ p.text-center.text-muted.text-small {
   color: #e94b3b;
 }
 
-.success{
+.success {
   color: #23ae89;
 }
 
@@ -110,6 +116,11 @@ div {
 .modal-content {
   z-index: 3000;
 }
+
+.bx-next {
+  margin-right: 10px;
+}
+
 .bx-viewport {
   min-width: 50%;
   max-width: 100%;
@@ -137,21 +148,24 @@ div {
   padding-left: 5px;
   font-weight: bold;
 }
+
 #fvb_simple_insert {
   position: fixed;
   top: 10px;
   left: 10px;
-  background: #1FBED6;
+  background: #FFB61C;
   border: 3px single $color_6;
-  color: $color_7;
   padding: 10px;
+  font-weight: bold;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
   //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
   border-radius: 8px;
   z-index: 10000;
-  a:hover {
+  a {
     color: $color_6;
   }
 }
+
 #map_canvas {
   width: 100%;
   height: 250px;

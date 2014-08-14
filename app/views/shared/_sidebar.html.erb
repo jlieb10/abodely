@@ -2,7 +2,7 @@
     <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><ul id="nav" data-ng-controller="NavCtrl" data-collapse-nav="" data-slim-scroll="" data-highlight-active="" class="ng-scope" style="overflow: hidden; width: auto; height: 100%;">
 
         <li tooltip-placement="bottom" tooltip="Drag me to your bookmarks bar and click from Craigslist to add a new apartment to your hunt!"> 
-            <%= link_to easymarklet_js('bookmarklet.js'), :class => "bookmarklet" do %> <i class="fa fa-bookmark"><span class="icon-bg bg-danger"></span></i> <span data-i18n="Bookmarklet"></span><%end%>
+            <%= link_to easymarklet_js('bookmarklet.js'), :class => "bookmarklet" do %> <i class="fa fa-bookmark"><span class="icon-bg bg-danger red"></span></i> <span data-i18n="Bookmarklet"></span><%end%>
         </li>
         
         <li>
@@ -13,7 +13,7 @@
               </ul>
         <i class="fa fa-caret-right icon-has-ul"></i></li>
         <li>
-            <a href="#/Apartments"><i class="fa fa-map-marker"><span class="icon-bg bg-warning"></span></i><span data-i18n="Apartments">Apartments</span></a>
+            <a href="#/Apartments"><i class="fa fa-map-marker"><span class="icon-bg bg-warning yellow"></span></i><span data-i18n="Apartments">Apartments</span></a>
             <ul>
                 <% if @hunt %>
                     <% if @hunt.id %>

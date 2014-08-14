@@ -57,8 +57,8 @@ Hunt.create(
   Apartment.create(
     :hunt_id => 1,
     :address => Faker::Address.street_address,
-    :link => Faker::Internet.email,
-    :contact => Faker::Internet.url,
+    :link => Faker::Internet.url,
+    :contact => Faker::Internet.email,
     :price => 4000
   )
 end
