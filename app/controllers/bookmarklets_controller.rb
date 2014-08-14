@@ -13,7 +13,6 @@ before_action :check_referer, only: [:index]
 
   private
   def check_referer
-    binding.pry
     url = params["url"]
     if !url.match("craigslist.org")
       redirect_to url
