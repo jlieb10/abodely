@@ -1,5 +1,5 @@
-//font
-@import url("http://fonts.googleapis.com/css?family=Pacifico");
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 //colors
 $color_0: #ddd;
@@ -11,6 +11,43 @@ $color_5: #1fbed6;
 $color_6: #000;
 $color_7: #fff;
 $color_8: #176698;
+//font
+
+.unique {
+  background-image: image-url('bricktexture.jpg');
+  background-position: no-repeat center center fixed;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.form-container {
+background-color: rgba(255,255,255,.3);
+padding: 16px;
+border-radius: 3%;
+}
+
+p.text-center.text-muted.text-small {
+  weight: bold;
+}
+
+.page-signin .signin-header, .page-signup .signin-header {
+  background-color: transparent;
+  padding: 52px 0 14px 0;
+}
+
+.page-signin .signin-body, .page-signin .signup-body, .page-signup .signin-body, .page-signup .signup-body {
+  border-top:none;
+}
+
+.text-black {
+  color: #333333;
+}
+
+.signuplink a {
+  color: $color_8;
+}
 
 .logo {
   font-family: 'Pacifico', cursive;
@@ -155,8 +192,4 @@ div {
     width: auto;
     padding-left: 15px;
   }
-}
-
-section#loginpage {
-  background-color: black;
 }
