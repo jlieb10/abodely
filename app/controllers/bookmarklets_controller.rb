@@ -18,7 +18,7 @@ before_action :check_referer, only: [:index]
       redirect_to url
     else
       cl_indicators = ["all housing", "postingbody"]
-      contents = open(url) {|f| f.read }
+      contents = open(url, 'User-Agent' => 'ruby') {|f| f.read }
       if cl_indicators.any? { |indicator| !contents.include?(indicator) }
         redirect_to url
       end
