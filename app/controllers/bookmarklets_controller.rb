@@ -13,12 +13,13 @@ before_action :check_referer, only: [:index]
 
   private
   def check_referer
+    require 'open-uri'
     url = params["url"]
     if !url.match("craigslist.org")
       redirect_to url
     else
       cl_indicators = ["all housing", "postingbody"]
-      contents = open(url) {|f| f.read }
+      contents = open(url, 'User-Agent' => "Ruby/2.0.0") {|f| f.read }
       if cl_indicators.any? { |indicator| !contents.include?(indicator) }
         redirect_to url
       end
