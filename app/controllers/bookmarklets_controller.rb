@@ -1,4 +1,5 @@
 class BookmarkletsController < ApplicationController
+require 'open-uri'
 before_action :check_referer, only: [:index]
  	
   # GET /bookmarklets
@@ -18,7 +19,7 @@ before_action :check_referer, only: [:index]
       redirect_to url
     else
       cl_indicators = ["all housing", "postingbody"]
-      contents = open(url, 'User-Agent' => 'ruby') {|f| f.read }
+      contents = open(url, 'User-Agent' => 'Ruby/"2.0.0"') {|f| f.read }
       if cl_indicators.any? { |indicator| !contents.include?(indicator) }
         redirect_to url
       end
