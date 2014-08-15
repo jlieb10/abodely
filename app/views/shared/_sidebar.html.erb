@@ -19,9 +19,11 @@
                 <% if @hunt.id %>
                     <li><%= link_to hunt_path(@hunt) do %><i class="fa fa-caret-right"></i><span data-i18n="Add New Apt" class="newapt">Add New Apartment</span><%end%></li>
                     <li ng-controller="ModalDemoCtrl" class="addnewcollab"><a href="#" ng-click= "open()"><i class="fa fa-caret-right"></i><span data-i18n="Add Collaborators" class="newcollab">Add Collaborators</span></a></li>
-                <% else %>
-                    <li><%= link_to hunt_path(current_user.hunts.last) do %><i class="fa fa-caret-right"></i><span data-i18n="Add New Apt" class="newapt">Add New Apartment</span><%end%></li>
                 <%end%>
+              <% elsif @current_user.hunts.last %>
+                    <li><%= link_to hunt_path(current_user.hunts.last) do %><i class="fa fa-caret-right"></i><span data-i18n="Add New Apt" class="newapt">Add New Apartment</span><%end%></li>
+              <% else %>
+                    <li><%= link_to new_hunt_path do %><i class="fa fa-caret-right"></i><span data-i18n="Add New Apt" class="newapt">Add New Apartment</span><%end%></li>
               <%end%>
               
             </ul>
