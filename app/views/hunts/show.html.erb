@@ -58,7 +58,11 @@
                   <% end %></td>
                   <td><%= apt.address %></td>
                   <td><%= apt.contact %></td>
-                  <td class = "center_me"><a href='<%= apt.link %>' target="_blank"><span class="glyphicon glyphicon-link"></span></a></td>
+                  <% if apt.link != "" %>
+                    <td class = "center_me"><a href='<%= apt.link %>' target="_blank"><span class="glyphicon glyphicon-link"></span></a></td>
+                  <% else %>
+                    <td></td>
+                  <% end %>
                   <td><%= number_to_currency(apt.price) %></td>
                   <td><%= select :apartment, :status, [" ", "Applied for", "Viewed", "No longer interested", "Contacted agent/landlord", "Application denied"], {selected: apt.status}, {class: "status", id: apt.id} %>
              </td>

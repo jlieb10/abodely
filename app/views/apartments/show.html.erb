@@ -12,31 +12,31 @@
           <div class="panel-body">
             <div class="media">
               <div class="media-body">
-                <ul class="list-unstyled list-info">
-                  <li class="ng-binding">
-                    <span class="icon glyphicon glyphicon-map-marker"></span>
-                    <label>Address:</label>
-                    <%= best_in_place @apartment, :address, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
+        
+
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <h5 class="list-group-item-heading"><span class="icon glyphicon glyphicon-map-marker"></span> Address</h5>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= best_in_place @apartment, :address, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
                   </li>
-                  <li class="ng-binding">
-                    <span class="icon glyphicon glyphicon-paperclip"></span>
-                    <label>Link:</label>
-                    <%= best_in_place @apartment, :link, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
+                  <li class="list-group-item">
+                    
+                    <h5 class="list-group-item-heading"><span class="icon glyphicon glyphicon-paperclip"></span> Link</h5>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= best_in_place @apartment, :link, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
                   </li>
-                  <li>
-                    <span class="icon glyphicon glyphicon-user"></span>
-                    <label>Contact:</label>
-                    <%= best_in_place @apartment, :contact, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
+                  <li class="list-group-item">
+                    
+                    <h5 class="list-group-item-heading"><span class="icon glyphicon glyphicon-user"></span> Contact</h5>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= best_in_place @apartment, :contact, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
                   </li>
-                  <li>
-                    <span class="icon glyphicon glyphicon-usd"></span>
-                    <label>Price:</label>
-                    $<%= best_in_place @apartment, :price, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
+                  <li class="list-group-item">
+                    
+                    <h5 class="list-group-item-heading"><i class="fa fa-money"></i> Price</h5>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$<%= best_in_place @apartment, :price, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
                   </li>
-                  <li>
-                    <span class="icon glyphicon glyphicon-calendar"></span>
-                    <label>Move In Date:</label>
-                    <%= best_in_place @apartment, :move_in_date, :type => :input %><span class="glyphicon glyphicon-pencil editicon hidden"></span>
+                  <li class="list-group-item">
+                    <h5 class="list-group-item-heading"><span class="icon glyphicon glyphicon-calendar"></span> Move In Date</h5>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= best_in_place @apartment, :move_in_date, :type => :input %><span class="glyphicon glyphicon-pencil editicon hidden"></span>
                   </li>
                 </ul>
               </div>
