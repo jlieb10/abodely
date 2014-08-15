@@ -18,7 +18,7 @@
         <td><%= apartment.address %></td>
         <td><%= apartment.link %></td>
         <td><%= apartment.contact %></td>
-        <td><%= apartment.price %></td>
+        <td><%= number_to_currency(apartment.price) %></td>
         <td><%= apartment.hunt.title %></td>
         <td><%= link_to 'Show', apartment %></td>
         <td><%= link_to 'Edit', edit_apartment_path(apartment) %></td>

@@ -42,7 +42,7 @@
                 <th>View</th>
                 <th>Address</th>
                 <th>Contact</th>
-                <th>Link</th>
+                <th class = "center_me">Link</th>
                 <th>Price</th>
                 <th>Status</th>
                 <th>Pros</th>
@@ -54,12 +54,12 @@
               <% @hunt.apartments.each do |apt| %>
               <tr data-id=<%= apt.id %>>
                 <td><%= link_to apartment_path(apt) do %>
-                  <i class="fa fa-home fa-2x"></i>
+                  <i class="fa fa-home fa-2x center_me"></i>
                   <% end %></td>
                   <td><%= apt.address %></td>
                   <td><%= apt.contact %></td>
-                  <td><%= apt.link %></td>
-                  <td><%= apt.price %></td>
+                  <td class = "center_me"><a href='<%= apt.link %>' target="_blank"><span class="glyphicon glyphicon-link"></span></a></td>
+                  <td><%= number_to_currency(apt.price) %></td>
                   <td><%= select :apartment, :status, [" ", "Applied for", "Viewed", "No longer interested", "Contacted agent/landlord", "Application denied"], {selected: apt.status}, {class: "status", id: apt.id} %>
              </td>
                   <td><span class="success"><%= apt.details.where(procon: "pro").count %> <i class="fa fa-thumbs-up"></span></td>
