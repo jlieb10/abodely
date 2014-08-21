@@ -34,6 +34,7 @@ $(document).ready(function(){
       $(this).next("span.editicon").addClass("hidden");
     })
 
+/* Make the con/pro radio buttons load with ajax */
   $('input.con, input.pro').change(function(){
     var form = $(this.form);
 
@@ -48,15 +49,15 @@ $(document).ready(function(){
       data: data,
       dataType: 'json'
     }).success(function(data){
-if (data.procon === "pro") {
-  form.parents(".page-tasks .task-list .view").removeClass("con-label");
-  form.parents(".page-tasks .task-list .view").addClass("pro-label");
-}
-else {
-  form.parents(".page-tasks .task-list .view").removeClass("pro-label");
-  form.parents(".page-tasks .task-list .view").addClass("con-label");
-}
-});
+      if (data.procon === "pro") {
+        form.parents(".page-tasks .task-list .view").removeClass("con-label");
+        form.parents(".page-tasks .task-list .view").addClass("pro-label");
+      }
+      else {
+        form.parents(".page-tasks .task-list .view").removeClass("pro-label");
+        form.parents(".page-tasks .task-list .view").addClass("con-label");
+      }
+      });
   });
 
   $('.addnewapt').click(function(){
@@ -92,6 +93,7 @@ $("a span.newhunt").click(function(){
   $("div .newhuntcollapse").addClass("in").animate({height: "auto"},1500);
 });
 
+//Apt Photo Gallery
 $('.bxslider').bxSlider({
   minSlides: 1,
   maxSlides: 1,
@@ -101,6 +103,7 @@ $('.bxslider').bxSlider({
   mode: 'fade'
 });
 
+//Google maps
 var geocoder;
 var map;
 var markersArray = [];

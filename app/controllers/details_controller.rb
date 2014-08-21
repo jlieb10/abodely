@@ -1,25 +1,10 @@
 class DetailsController < ApplicationController
-  before_action :set_detail, only: [:show, :edit, :update, :destroy]
+  before_action :set_detail, only: [:update, :destroy]
 
   # GET /details
   # GET /details.json
   def index
     @details = Detail.all
-  end
-
-  # GET /details/1
-  # GET /details/1.json
-  def show
-  end
-
-  # GET /details/new
-  def new
-    # @apartment = Apartment.find(params[:apartment_id])
-    # @detail = Detail.new
-  end
-
-  # GET /details/1/edit
-  def edit
   end
 
   # POST /details
@@ -41,7 +26,6 @@ class DetailsController < ApplicationController
   # PATCH/PUT /details/1
   # PATCH/PUT /details/1.json
   def update
-    #binding.pry
     respond_to do |format|
       if @detail.update(detail_params)
         format.html { redirect_to @detail.apartment, notice: 'Detail was successfully updated.' }

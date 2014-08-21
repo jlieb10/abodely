@@ -1,36 +1,36 @@
-<!---------- BASIC APARTMENT INFORMATION ---------->
   <div class="page page-tasks ng-scope">
+    <!---------- BREADCRUMBS ---------->
     <ol class="breadcrumb">
       <li><%= link_to "My Hunts", hunts_path %></a></li>
       <li><%= link_to @apartment.hunt.title, hunt_path(@hunt.id) %></a></li>
       <li class="active"><a href=""><%= @apartment.address %></a></li>
     </ol>
     <div class="row">
+      <!---------- LEFT PANEL APARTMENT INFORMATION ---------->
       <div class="col-md-4">
         <div class="panel panel-primary">
           <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> <span id="address"><%= @apartment.address %><span class="glyphicon glyphicon-pencil editicon hidden"></span></strong></div>
           <div class="panel-body">
             <div class="media">
               <div class="media-body">
-        
-
                 <ul class="list-group">
+ 
                   <li class="list-group-item">
                     <h5 class="list-group-item-heading"><span class="icon glyphicon glyphicon-map-marker"></span> Address</h5>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= best_in_place @apartment, :address, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
                   </li>
-                  <li class="list-group-item">
-                    
+  
+                  <li class="list-group-item">                
                     <h5 class="list-group-item-heading"><span class="icon glyphicon glyphicon-paperclip"></span> Link</h5>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= best_in_place @apartment, :link, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
                   </li>
-                  <li class="list-group-item">
-                    
+  
+                  <li class="list-group-item">                 
                     <h5 class="list-group-item-heading"><span class="icon glyphicon glyphicon-user"></span> Contact</h5>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= best_in_place @apartment, :contact, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
                   </li>
-                  <li class="list-group-item">
-                    
+
+                  <li class="list-group-item">                  
                     <h5 class="list-group-item-heading"><i class="fa fa-money"></i> Price</h5>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$<%= best_in_place @apartment, :price, :type => :input %>     <span class="glyphicon glyphicon-pencil editicon hidden"></span>
                   </li>
@@ -54,59 +54,54 @@
       <div class="col-md-8">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <strong><span class="glyphicon glyphicon-th"></span>
-              <span>Gallery:</span>
+            <strong><span class="glyphicon glyphicon-th"></span><span>Gallery:</span>
               <div ng-controller="ModalDemoCtrl" class="addnewimg">
                 <script type="text/ng-template" id="inviteForm.html.erb">
-                <%= render 'details/form' %>
+                  <%= render 'details/form' %>
                 </script>
-                <a href="#" ng-click="open()">
-                  Add Image <i class="fa fa-plus"></i>
-                </a>
-              </div></strong>
-            </div>
-            <div class="panel-body">
-              <div class="media">
-                <div class="media-body">
-                  <ul class="bxslider">
-                    <% @image_count = 0 %>
-                    <% @apartment.details.each do |detail| %>
-                      <% if detail.image_url %>
-                        <% @image_count += 1 %>
-                        <li><%= image_tag detail.image_url(:gallery) %></li>
-                      <% end %>
-                      <% @image_count %>
+                <a href="#" ng-click="open()">Add Image <i class="fa fa-plus"></i></a>
+              </div>
+            </strong>
+          </div>
+          <div class="panel-body">
+            <div class="media">
+              <div class="media-body">
+                <ul class="bxslider">
+                  <% @image_count = 0 %>
+                  <% @apartment.details.each do |detail| %>
+                    <% if detail.image_url %>
+                      <% @image_count += 1 %>
+                      <li><%= image_tag detail.image_url(:gallery) %></li>
                     <% end %>
-                    <%= temporary_image(@image_count) %>
-                  </ul>
-                </div>
+                    <% @image_count %>
+                  <% end %>
+                  <%= temporary_image(@image_count) %>
+                </ul>
               </div>
             </div>
           </div>
-                <!---------- DETAILS ---------->
-          <section class="task-container ng-scope" data-ng-controller="taskCtrl">
-            <%= render 'details/form2' %>
+        </div>
+        <!---------- APT NOTES  ---------->
+        <section class="task-container ng-scope" data-ng-controller="taskCtrl">
+          <%= render 'details/form2' %>
         <div class="divider"></div>
         <section class="panel panel-default">
           <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Apartment Notes</strong></div>
           <div class="panel-body">
             <ul class="task-list list-unstyled">
               <% @apartment.details.each do |detail| %>
-              <% if detail.content != "" %>
-              <li  class="ng-scope">
-<!------ --> <%= render_details detail %>
-              </li>
-              <% end%>
+                <% if detail.content != "" %>
+                  <li  class="ng-scope"> <%= render_details detail %></li>
+                <% end%>
               <%end%>
             </ul>
           </div>
         </section>
       </section>
     </div>
-        </div>
-      </div>
-      <div class="divider"></div>
+  </div>
+</div>
 
 
-   
+ 
 

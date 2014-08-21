@@ -1,8 +1,8 @@
 <%= form_for([@apartment, @detail], :class=>"add-task ng-pristine ng-valid") do |f| %>
+  
   <% if @detail.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@detail.errors.count, "error") %> prohibited this detail from being saved:</h2>
-
       <ul>
       <% @detail.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,12 +11,13 @@
     </div>
   <% end %>
 
-    <%= f.text_field :content, :placeholder=>"What do you think?", :class=>"form-control ng-pristine ng-valid" do %>
+  <%= f.text_field :content, :placeholder=>"What do you think?", :class=>"form-control ng-pristine ng-valid" do %>
     <a type="submit" class="submit-button" data-ng-click="add()">
-        <span class="glyphicon glyphicon-plus"></span>
+      <span class="glyphicon glyphicon-plus"></span>
     </a>
   <%end%>
- <% if @apartment %>
+  
+  <% if @apartment %>
     <%= f.hidden_field :apartment_id, :value => @apartment.id %>
   <% end %>
 

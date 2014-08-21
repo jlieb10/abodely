@@ -2,37 +2,38 @@
 <%= f.hidden_field :hunt_id, :value => @hunt.id %>
   <div class="form-group">
     <div class="row">
-       <div class="col-sm-1"></div>
+      <div class="col-sm-1"></div>
         <div class="col-sm-8">
-        <%= f.text_field :address, class: "form-control",  :placeholder=>"Address"%>
-         </div>
+          <%= f.text_field :address, class: "form-control",  :placeholder=>"Address"%>
+        </div>
   
         <div class="col-sm-2">
           <%= f.text_field :price, class: "form-control",  :placeholder=>"Price"%>
         </div>
-     </div>
-
-     <div class="divider"></div>
-
-    <div class="row">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-4">
-        <%= f.text_field :link, class: "form-control",  :placeholder=>"Link"%>
       </div>
-      <div class="col-sm-4">
-        <%= f.text_field :contact, class: "form-control",  :placeholder=>"Contact"%>
-  </div>
-    <div class="col-sm-2">
 
-      <%= f.text_field :move_in_date, class: "form-control col-md-2",  :placeholder=>"Move-in Date"%>
+      <div class="divider"></div>
+
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-4">
+          <%= f.text_field :link, class: "form-control",  :placeholder=>"Link"%>
+        </div>
+        <div class="col-sm-4">
+          <%= f.text_field :contact, class: "form-control",  :placeholder=>"Contact"%>
+        </div>
+        <div class="col-sm-2">
+          <%= f.text_field :move_in_date, class: "form-control col-md-2",  :placeholder=>"Move-in Date"%>
+        </div>
+      </div>
+      
+      <div class="divider"></div>
+
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <%= f.submit "Add", :class=> "btn btn-w-lg btn-gap-v btn-success" %>
+        <%= f.submit "Cancel", :class=>"btn btn-w-lg btn-gap-v btn-warning"%>
+      </div>
     </div>
-  </div>
-  <div class="divider"></div>
-  <div class="row">
-     <div class="col-sm-4"></div>
-    <%= f.submit "Add", :class=> "btn btn-w-lg btn-gap-v btn-success" %>
-     <%= f.submit "Cancel", :class=>"btn btn-w-lg btn-gap-v btn-warning"%>
-  </div>
-</div>
-<% end %>
+  <% end %>
 

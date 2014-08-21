@@ -1,34 +1,24 @@
 <div id="nav-wrapper" class="ng-scope">
-    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><ul id="nav" data-ng-controller="NavCtrl" data-collapse-nav="" data-slim-scroll="" data-highlight-active="" class="ng-scope" style="overflow: hidden; width: auto; height: 100%;">
-
-        <li tooltip-placement="bottom" tooltip="Drag me to your bookmarks bar and click from Craigslist to add a new apartment to your hunt!"> 
-            <%= link_to easymarklet_js('bookmarklet.js'), :class => "bookmarklet" do %> <i class="fa fa-bookmark"><span class="icon-bg bg-danger red"></span></i> <span data-i18n="Bookmarklet"></span><%end%>
-        </li>
-        
-        <li>
-            <a href="#/hunts"><i class="fa fa-bullseye"><span class="icon-bg bg-violet"></span></i><span data-i18n="Hunts">Hunts</span></a>
-            <ul>
-                <li><%= link_to hunts_path do %><i class="fa fa-caret-right"></i><span data-i18n="Add New Hunt" class="newhunt">Add New Hunt</span><%end%></li>
-                <li><%= link_to hunts_path do%><i class="fa fa-caret-right"></i><span data-i18n="Hunt History">Hunt History</span><%end%></li>
-              </ul>
-        <i class="fa fa-caret-right icon-has-ul"></i></li>
-        <li>
-            <a href="#/Apartments"><i class="fa fa-map-marker"><span class="icon-bg bg-warning yellow"></span></i><span data-i18n="Apartments">Apartments</span></a>
-            <ul>
-              <% if @hunt %>
-                <% if @hunt.id %>
-                    <li><%= link_to hunt_path(@hunt) do %><i class="fa fa-caret-right"></i><span data-i18n="Add New Apt" class="newapt">Add New Apartment</span><%end%></li>
-                    <li ng-controller="ModalDemoCtrl" class="addnewcollab"><a href="#" ng-click= "open()"><i class="fa fa-caret-right"></i><span data-i18n="Add Collaborators" class="newcollab">Add Collaborators</span></a></li>
-                <%end%>
-              <% elsif @current_user.hunts.last %>
-                    <li><%= link_to hunt_path(current_user.hunts.last) do %><i class="fa fa-caret-right"></i><span data-i18n="Add New Apt" class="newapt">Add New Apartment</span><%end%></li>
-              <% else %>
-                    <li><%= link_to new_hunt_path do %><i class="fa fa-caret-right"></i><span data-i18n="Add New Apt" class="newapt">Add New Apartment</span><%end%></li>
-              <%end%>
-              
-            </ul>
-        <i class="fa fa-caret-right icon-has-ul"></i></li>
-
-
-    </ul><div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; right: 1px; height: 536px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
+  <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">
+    <ul id="nav" data-ng-controller="NavCtrl" data-collapse-nav="" data-slim-scroll="" data-highlight-active="" class="ng-scope" style="overflow: hidden; width: auto; height: 100%;">
+      <li tooltip-placement="bottom" tooltip="Drag me to your bookmarks bar and click from Craigslist to add a new apartment to your hunt!"> 
+        <%= link_to easymarklet_js('bookmarklet.js'), :class => "bookmarklet" do %> <i class="fa fa-bookmark"><span class="icon-bg bg-danger red"></span></i> <span data-i18n="Bookmarklet"></span><%end%>
+      </li>    
+      <li>
+        <a href="#/hunts"><i class="fa fa-bullseye"><span class="icon-bg bg-violet"></span></i><span data-i18n="Hunts">Hunts</span></a>
+        <ul>
+          <li><%= link_to hunts_path do %><i class="fa fa-caret-right"></i><span data-i18n="Add New Hunt" class="newhunt">Add New Hunt</span><%end%></li>
+          <li><%= link_to hunts_path do%><i class="fa fa-caret-right"></i><span data-i18n="Hunt History">Hunt History</span><%end%></li>
+        </ul>
+        <i class="fa fa-caret-right icon-has-ul"></i>
+      </li>
+      <li>
+        <a href="#/Apartments"><i class="fa fa-map-marker"><span class="icon-bg bg-warning yellow"></span></i><span data-i18n="Apartments">Apartments</span></a>
+        <ul>
+          <%= render 'shared/links' %>     
+        </ul>
+        <i class="fa fa-caret-right icon-has-ul"></i>
+      </li>
+    </ul>
+  </div>
 </div>
