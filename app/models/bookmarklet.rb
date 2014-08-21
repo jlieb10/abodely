@@ -23,7 +23,7 @@ class Bookmarklet
 
 	def scrape_images
 		@doc.css('#thumbs a').each do |thumb|
-    	@images << thumb['href']
+	  		@images << thumb['href']
 		end
 	end
 

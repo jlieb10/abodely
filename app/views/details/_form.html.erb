@@ -1,35 +1,24 @@
 <h3 class="modal-header">Add New Image</h3>
 <div class="modal-body">
   <%= form_for([@apartment, @detail], :url => apartment_details_path(@apartment), :html => {:method => :post }) do |f| %>
-  <% if @detail.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@detail.errors.count, "error") %> prohibited this detail from being saved:</h2>
-
-      <ul>
-      <% @detail.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field form-group">
     <%= f.label :image, "Upload" %><br>
     <%= f.file_field :image %>
   </div>
 
-
   <div class="field form-group">
     <%= f.label :remote_image_url, "or paste an image URL" %><br>
     <%= f.text_field :remote_image_url, :class => 'form-control', :placeholder => "http://" %>
   </div>
 
-    <div class="field form-group">
-    <%= f.label :content, "Add a caption" %><br>
-    <%= f.text_area :content, :class => 'form-control' %>
+  <div class="field form-group">
+      <%= f.label :content, "Add a caption" %><br>
+      <%= f.text_area :content, :class => 'form-control' %>
   </div>
 
   <%= f.hidden_field :apartment_id, :value => @apartment.id %><br>
+  
   <div class="actions modal-footer">
     <%= f.submit :class => 'btn btn-success', :type => "submit", :value => "Create Image"%>
   </div>

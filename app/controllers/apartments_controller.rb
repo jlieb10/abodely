@@ -10,9 +10,7 @@ class ApartmentsController < ApplicationController
   # GET /apartments/1
   # GET /apartments/1.json
   def show
-    @apartment = Apartment.find(params[:id])
     @detail = Detail.new(:apartment_id => @apartment.id)
-    @hunt = @apartment.hunt
     @detail = Detail.new
   end
 
@@ -20,7 +18,6 @@ class ApartmentsController < ApplicationController
   def new
     @hunt = Hunt.find(params[:hunt_id])
     @apartment = Apartment.new
-    #@cancel_link = hunt_path(@hunt)
   end
 
   # GET /apartments/1/edit
